@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSpatial | Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body data-page="dashboard">
+  <aside class="sidebar">
+    <a class="brand" href="/index.html">
+      <span>✦</span>
+      <div><strong>AgriSpatial</strong><small>Precision Farming</small></div>
+    </a>
+
+    <nav>
+      <a class="nav-link active" href="/index.html">⌂ Dashboard</a>
+      <a class="nav-link" href="/field.html">⌖ Field Explorer</a>
+      <a class="nav-link" href="/irrigation.html">◈ Irrigation Planner</a>
+      <a class="nav-link" href="/soil.html">◉ Soil Intelligence</a>
+      <a class="nav-link" href="/algorithms.html">⌘ Algorithm Lab</a>
+    </nav>
+
+    <div class="sidebar-note">
+      <span class="live-dot"></span>
+      Java spatial engine online
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">FIELD OVERVIEW</p>
+        <h1>Good morning!!</h1>
+      </div>
+      <div class="topbar-status"><span id="server-dot"></span><span id="server-text">Connecting…</span></div>
+    </header>
+
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow light">SMART IRRIGATION CONTROL</p>
+        <h2>Your Farm has it's needs.<br>Listen to it before you water.</h2>
+        <p>Explore live sensor data, discover dry zones, and make spatial decisions using Java data structures.</p>
+        <a class="hero-button" href="/field.html">Explore the field →</a>
+      </div>
+      <div class="hero-orb"><span>🌾</span></div>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>Active sensors</span>
+        <strong id="sensor-count">—</strong>
+        <small>Loaded from CSV</small>
+      </article>
+      <article class="metric-card">
+        <span>Average moisture</span>
+        <strong id="avg-moisture">—</strong>
+        <small>Across the whole farm</small>
+      </article>
+      <article class="metric-card">
+        <span>Dry sensors</span>
+        <strong id="dry-count">—</strong>
+        <small>Need attention</small>
+      </article>
+      <article class="metric-card accent">
+        <span>Farm status</span>
+        <strong id="farm-status">—</strong>
+        <small>Automatic assessment</small>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel moisture-panel">
+        <div class="panel-title">
+          <div><p class="eyebrow">MOISTURE PULSE</p><h3>Field health</h3></div>
+          <a href="/irrigation.html">View zones →</a>
+        </div>
+        <div class="moisture-gauge">
+          <div id="gauge-ring"><strong id="gauge-value">—</strong><span>average moisture</span></div>
+          <div class="gauge-copy">
+            <h3 id="gauge-status">Loading field data</h3>
+            <p id="gauge-message">Java is calculating the farm summary.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel zone-summary">
+        <div class="panel-title">
+          <div><p class="eyebrow">AUTO-GENERATED ZONES</p><h3>Watering priorities</h3></div>
+          <a href="/irrigation.html">Planner →</a>
+        </div>
+        <div id="dashboard-zones" class="mini-zones"></div>
+      </article>
+    </section>
+
+    <section class="quick-grid">
+      <a class="quick-card" href="/field.html"><span>⌖</span><div><h3>Explore field</h3><p>Range search and nearest sensor</p></div></a>
+      <a class="quick-card" href="/soil.html"><span>◉</span><div><h3>Analyse soil</h3><p>pH, nutrients, and fertilizer plan</p></div></a>
+      <a class="quick-card" href="/algorithms.html"><span>⌘</span><div><h3>Show algorithms</h3><p>Explain your DSA implementation</p></div></a>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

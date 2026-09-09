@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSpatial | Irrigation Planner</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body data-page="irrigation">
+  <aside class="sidebar">
+    <a class="brand" href="/index.html"><span>✦</span><div><strong>AgriSpatial</strong><small>Precision Farming</small></div></a>
+    <nav>
+      <a class="nav-link" href="/index.html">⌂ Dashboard</a>
+      <a class="nav-link" href="/field.html">⌖ Field Explorer</a>
+      <a class="nav-link active" href="/irrigation.html">◈ Irrigation Planner</a>
+      <a class="nav-link" href="/soil.html">◉ Soil Intelligence</a>
+      <a class="nav-link" href="/algorithms.html">⌘ Algorithm Lab</a>
+    </nav>
+    <div class="sidebar-note"><span class="live-dot"></span> Java spatial engine online</div>
+  </aside>
+
+  <main class="app-main">
+    <header class="topbar">
+      <div><p class="eyebrow">AUTOMATIC IRRIGATION ZONES</p><h1>Water where it matters.</h1></div>
+      <button class="ghost-btn" id="refresh-zones">↻ Refresh analysis</button>
+    </header>
+
+    <section class="planner-hero">
+      <div>
+        <p class="eyebrow light">SPATIAL ZONE GENERATION</p>
+        <h2>Four field zones.<br>One clear watering plan.</h2>
+        <p>The Java backend groups sensors by their coordinates, calculates average moisture, and assigns an irrigation priority.</p>
+      </div>
+      <div class="zone-symbol">◈</div>
+    </section>
+
+    <section id="zone-grid" class="zone-grid"></section>
+
+    <section class="panel planner-explainer">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h3>Simple, explainable automatic zone generation</h3>
+      <div class="process-row">
+        <span>1. Divide field spatially</span>
+        <span>2. Group sensors by zone</span>
+        <span>3. Average moisture</span>
+        <span>4. Generate irrigation action</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

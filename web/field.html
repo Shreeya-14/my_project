@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSpatial | Field Explorer</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body data-page="field">
+  <aside class="sidebar">
+    <a class="brand" href="/index.html"><span>✦</span><div><strong>AgriSpatial</strong><small>Precision Farming</small></div></a>
+    <nav>
+      <a class="nav-link" href="/index.html">⌂ Dashboard</a>
+      <a class="nav-link active" href="/field.html">⌖ Field Explorer</a>
+      <a class="nav-link" href="/irrigation.html">◈ Irrigation Planner</a>
+      <a class="nav-link" href="/soil.html">◉ Soil Intelligence</a>
+      <a class="nav-link" href="/algorithms.html">⌘ Algorithm Lab</a>
+    </nav>
+    <div class="sidebar-note"><span class="live-dot"></span> Java spatial engine online</div>
+  </aside>
+
+  <main class="app-main">
+    <header class="topbar">
+      <div><p class="eyebrow">SPATIAL ANALYTICS</p><h1>Field Explorer</h1></div>
+      <button class="ghost-btn" id="add-sensor">+ Add simulated sensor</button>
+    </header>
+
+    <section class="field-layout">
+      <article class="panel map-panel">
+        <div class="panel-title">
+          <div><p class="eyebrow">INTERACTIVE SENSOR MAP</p><h3>North Field · 100 × 100 m</h3></div>
+          <span class="chip">Click map for nearest sensor</span>
+        </div>
+        <svg id="farm-map" viewBox="0 0 100 100" aria-label="Farm sensor map"></svg>
+        <div class="map-legend">
+          <span><i class="legend-dot danger"></i>Dry &lt; 35%</span>
+          <span><i class="legend-dot warning"></i>Monitor 35–59%</span>
+          <span><i class="legend-dot good"></i>Healthy ≥ 60%</span>
+        </div>
+      </article>
+
+      <aside class="field-tools">
+        <article class="panel tool-card">
+          <p class="eyebrow">ORTHOGONAL RANGE SEARCH</p>
+          <h3>Select a field area</h3>
+          <div class="coordinate-grid">
+            <label>X min<input id="xmin" type="number" min="0" max="100" value="10"></label>
+            <label>X max<input id="xmax" type="number" min="0" max="100" value="60"></label>
+            <label>Y min<input id="ymin" type="number" min="0" max="100" value="15"></label>
+            <label>Y max<input id="ymax" type="number" min="0" max="100" value="70"></label>
+          </div>
+          <button class="primary-btn full" id="run-range">Run range query</button>
+          <p id="range-output" class="result-box">Select a rectangle to inspect sensors.</p>
+        </article>
+
+        <article class="panel tool-card">
+          <p class="eyebrow">KD-TREE NEAREST SEARCH</p>
+          <h3 id="nearest-title">Choose a point</h3>
+          <p id="nearest-output" class="result-box">Click anywhere on the map. Java will search the KD-Tree.</p>
+          <button class="danger-btn full" id="remove-sensor">Remove selected sensor</button>
+        </article>
+      </aside>
+    </section>
+
+    <section class="panel query-panel">
+      <div>
+        <p class="eyebrow">ALGORITHM TRACE</p>
+        <h3>How the query is answered</h3>
+      </div>
+      <p id="query-trace">Run a range query or click the map to see the algorithm steps.</p>
+    </section>
+
+    <section id="sensor-detail" class="detail-strip">
+      <p>Select a point on the map to inspect a sensor.</p>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

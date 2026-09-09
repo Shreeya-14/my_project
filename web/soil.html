@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSpatial | Soil Intelligence</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body data-page="soil">
+  <aside class="sidebar">
+    <a class="brand" href="/index.html"><span>✦</span><div><strong>AgriSpatial</strong><small>Precision Farming</small></div></a>
+    <nav>
+      <a class="nav-link" href="/index.html">⌂ Dashboard</a>
+      <a class="nav-link" href="/field.html">⌖ Field Explorer</a>
+      <a class="nav-link" href="/irrigation.html">◈ Irrigation Planner</a>
+      <a class="nav-link active" href="/soil.html">◉ Soil Intelligence</a>
+      <a class="nav-link" href="/algorithms.html">⌘ Algorithm Lab</a>
+    </nav>
+    <div class="sidebar-note"><span class="live-dot"></span> Java spatial engine online</div>
+  </aside>
+
+  <main class="app-main">
+    <header class="topbar">
+      <div><p class="eyebrow">SOIL AND NUTRIENT ANALYTICS</p><h1>Soil Intelligence</h1></div>
+      <span class="chip">Educational recommendations</span>
+    </header>
+
+    <section class="soil-hero">
+      <div>
+        <p class="eyebrow light">FERTILIZER SUPPORT SYSTEM</p>
+        <h2>Balance the soil.<br>Protect the crop.</h2>
+        <p>Recommendations are generated from average pH and nutrient readings in your CSV dataset.</p>
+      </div>
+      <div class="soil-icon">◉</div>
+    </section>
+
+    <section class="metric-grid soil-metrics">
+      <article class="metric-card"><span>Average pH</span><strong id="soil-ph">—</strong><small id="ph-status">Loading…</small></article>
+      <article class="metric-card"><span>Average nutrients</span><strong id="soil-nutrients">—</strong><small>Nutrient index</small></article>
+      <article class="metric-card"><span>Low nutrient sensors</span><strong id="low-nutrients">—</strong><small>Below recommended level</small></article>
+      <article class="metric-card accent"><span>Fertilizer status</span><strong id="fertilizer-status">—</strong><small>Generated from data</small></article>
+    </section>
+
+    <section class="soil-grid">
+      <article class="panel recommendation-panel">
+        <p class="eyebrow">FERTILIZER SUGGESTION</p>
+        <h3 id="fertilizer-title">Analysing your field</h3>
+        <p id="fertilizer-copy">Please wait while Java reads pH and nutrient values.</p>
+        <div class="notice">For capstone demonstration only. Real farms require local soil testing and agricultural expert advice.</div>
+      </article>
+
+      <article class="panel recommendation-panel">
+        <p class="eyebrow">PH INSIGHT</p>
+        <h3 id="ph-title">Checking soil pH</h3>
+        <p id="ph-copy">The system will identify whether your average pH is acidic, balanced, or alkaline.</p>
+        <div class="ph-scale"><span>Acidic</span><i></i><span>Balanced</span><i></i><span>Alkaline</span></div>
+      </article>
+    </section>
+
+    <section class="panel sensor-table-panel">
+      <div class="panel-title"><div><p class="eyebrow">SENSOR SOIL READINGS</p><h3>Field sample</h3></div><span class="chip">First 12 sensors</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Sensor</th><th>Coordinates</th><th>Moisture</th><th>pH</th><th>Nutrients</th><th>Crop health</th></tr></thead>
+          <tbody id="soil-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

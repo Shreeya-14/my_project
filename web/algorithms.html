@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSpatial | Algorithm Lab</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body data-page="algorithms">
+  <aside class="sidebar">
+    <a class="brand" href="/index.html"><span>✦</span><div><strong>AgriSpatial</strong><small>Precision Farming</small></div></a>
+    <nav>
+      <a class="nav-link" href="/index.html">⌂ Dashboard</a>
+      <a class="nav-link" href="/field.html">⌖ Field Explorer</a>
+      <a class="nav-link" href="/irrigation.html">◈ Irrigation Planner</a>
+      <a class="nav-link" href="/soil.html">◉ Soil Intelligence</a>
+      <a class="nav-link active" href="/algorithms.html">⌘ Algorithm Lab</a>
+    </nav>
+    <div class="sidebar-note"><span class="live-dot"></span> Java spatial engine online</div>
+  </aside>
+
+  <main class="app-main">
+    <header class="topbar">
+      <div><p class="eyebrow">DSA EXPLAINER</p><h1>Algorithm Lab</h1></div>
+      <span class="chip">Built in Java</span>
+    </header>
+
+    <section class="algo-grid">
+      <article class="panel algo-card">
+        <span class="algo-number">01</span>
+        <p class="eyebrow">KD-TREE</p>
+        <h3>Nearest sensor retrieval</h3>
+        <p>Each tree level splits points by x, then y. The search skips branches that cannot contain a closer sensor.</p>
+        <code>Nearest neighbour query</code>
+      </article>
+
+      <article class="panel algo-card">
+        <span class="algo-number">02</span>
+        <p class="eyebrow">RANGE INDEX</p>
+        <h3>Orthogonal range search</h3>
+        <p>A balanced primary tree is ordered by X-coordinate. Every node stores a secondary Y-sorted catalog, allowing 2D rectangle queries.</p>
+        <code>2D orthogonal range tree</code>
+      </article>
+
+      <article class="panel algo-card">
+        <span class="algo-number">03</span>
+        <p class="eyebrow">FRACTIONAL CASCADING</p>
+        <h3>Linked sorted lookups</h3>
+        <p>The first catalog uses binary search. Bridge pointers then guide searches through augmented north and south catalogs without starting full searches again.</p>
+        <code>Linked augmented catalogs</code>
+      </article>
+    </section>
+
+    <section class="panel cascade-lab">
+      <div class="panel-title">
+        <div><p class="eyebrow">LIVE FRACTIONAL CASCADING DEMO</p><h3>Find a moisture target in sorted zone lists</h3></div>
+        <strong id="target-value">45%</strong>
+      </div>
+
+      <input id="moisture-slider" class="wide-slider" type="range" min="15" max="90" value="45">
+
+      <div id="cascade-output" class="cascade-results">
+        Loading Java sorted-list results…
+      </div>
+    </section>
+
+    <section class="panel viva-panel">
+      <p class="eyebrow">Simple Description</p>
+      <h3>One-line explanations to remember</h3>
+      <div class="viva-grid">
+        <p><strong>KD-Tree:</strong> “It divides 2D space using alternating x and y splits, helping skip irrelevant points.”</p>
+        <p><strong>Range search:</strong> “It retrieves sensors inside an axis-aligned rectangle instead of examining the whole field.”</p>
+        <p><strong>Fractional cascading:</strong> “It demonstrates how one sorted-list search can guide related searches in other lists.”</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
